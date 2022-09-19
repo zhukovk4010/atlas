@@ -1,0 +1,315 @@
+/* Сброс стилей css */
+
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article>*+* {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* Стили фона */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: aliceblue;
+  /* background: url('../img/Background-forest.jpg') no-repeat center center fixed; */
+  background-size: cover;
+  /* backdrop-filter: blur(5px); */
+}
+
+/* Меню */
+.menu {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 150%;
+  width: 100%;
+  background-color: rgb(207, 255, 201);
+  z-index: 5;
+}
+
+.menu h1 {
+  padding: 5% 10%;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 6;
+  text-align: center;
+}
+
+.menu .menu-buttons {
+  display: grid;
+  width: 90%;
+  margin: 0 auto;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.menu .menu-buttons .top-side-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 250px);
+  justify-content: space-between;
+}
+
+.menu .menu-buttons .bottom-side-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 250px);
+  justify-content: space-between;
+}
+
+.menu .menu-buttons .menu-button11 {
+  width: 250px;
+  margin: 0 auto;
+}
+
+
+.menu .menu-buttons button {
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+  height: 100px;
+}
+
+.menu .menu-buttons button:hover {
+  background: rgb(212, 218, 224);
+  transition: 0.4s;
+}
+
+.menu .menu-buttons button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.menu-transparent {
+  display: none;
+}
+
+.menu-transparent button {
+  display: none;
+}
+
+
+/* Шапка сайта */
+.header {
+  z-index: 2;
+  width: 100%;
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
+  background-color: aliceblue;
+  box-shadow: 0 1px 10px;
+}
+
+/* Левая часть шапки */
+.header .icon-and-name {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+/* Иконка */
+.header .icon-and-name .icon img {
+  margin-top: 5px;
+  width: 30px;
+  height: auto;
+  border-radius: 90%;
+}
+
+/* Название атласа */
+.header .icon-and-name .name-atlas {
+  font-size: 25px;
+}
+
+/* Правая часть шапки с кнопками */
+.header .maps {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  gap: 10px;
+}
+
+/* Стилизация кнопок */
+.header .maps .buttons {
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+}
+
+/* реакция кнопки при наведении на нее */
+.header .maps .buttons:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
+  content: attr(data-title)
+}
+
+/* реакция кнопки при нажатии на нее */
+.header .maps .buttons:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+/* Часть с картой и информацией */
+.main-part {
+  margin-top: 70px;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  justify-items: right;
+  padding: 20px;
+}
+
+/* Карта */
+.main-part .container-map {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 50px auto;
+  justify-items: center;
+}
+
+/* Название карты */
+.main-part .container-map .name-map {
+  font-size: 20px;
+  color: black;
+}
+
+/* Блок с картой */
+.main-part .container-map .map {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.main-part .container-map .map .legend {
+  padding: 10px;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  height: auto;
+  width: 30%;
+  border-radius: 10px;
+  left: 10px;
+  top: 10px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.main-part .container-map .map .legend img {
+  height: auto;
+}
+
+/* Информация о карте */
+.main-part .information {
+  display: grid;
+  margin-top: 50px;
+  grid-template-rows: 30% 70%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 80%;
+}
+
+.main-part .information .img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.main-part .information .text {
+  padding: 10px;
+}
+
+.main-part .information .text h1 {
+  font-size: 14px;
+}
+
+.main-part .information .text p {
+  font-size: 12px;
+}
+
+.tabbar {
+  display: none;
+}
+
+
+.mapboxgl-popup {
+  max-width: 200px;
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}

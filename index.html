@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang='ru'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Лесной атлас</title>
+    <link rel='stylesheet' href='css/main.css'>
+    <link rel="stylesheet" href='css/adaptive.css'>
+
+    <!-- Подключение шрифта  -->
+    <link href="https://fonts.googleapis.com/
+        css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Подключение mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<body>
+
+    <!-- Содержание -->
+    <section id="menu" class="menu">
+        <h1>Электронный лесной атлас</h1>
+        <div class="menu-buttons">
+            <div class="top-side-buttons">
+                <button id="menu-button1" class="menu-button1">Классы бонитета</button>
+                <button id="menu-button3" class="menu-button3">Фонд лесовосстановления</button>
+                <button id="menu-button5" class="menu-button5">Рубки промежуточного пользования</button>
+                <button id="menu-button7" class="menu-button7">Расчётная лесосека</button>
+                <button id="menu-button9" class="menu-button9">Лесная площадь, пройденная пожарами</button>
+            </div>
+
+            <div class="bottom-side-buttons">
+                <button id="menu-button2" class="menu-button2">Площадь лесовосстановления</button>
+                <button id="menu-button4" class="menu-button4">Не покрытая лесом площадь</button>
+                <button id="menu-button6" class="menu-button6">Рубки главного пользования</button>
+                <button id="menu-button8" class="menu-button8">Потери древесины вследствие лесных пожаров</button>
+                <button id="menu-button10" class="menu-button10">Возраст древостоя</button>
+            </div>
+            <button id="menu-button11" class="menu-button11">Лесные районы</button>
+        </div>
+    </section>
+
+    <!-- Верхнее меню -->
+    <header class='header'>
+
+        <!-- Левая часть с иконкой и названием атласа -->
+        <div class='icon-and-name'>
+            <div id="icon" class='icon'>
+                <!-- Иконка с лесом -->
+                <img src="img/Icon.png" alt="icon">
+            </div>
+            <div class='name-atlas'>Электронный лесной атлас</div>
+        </div>
+
+        <!-- Правая часть с выбором карт -->
+        <nav class='maps'>
+            <button id='button-map1' class='buttons' title="Классы бонитета">1</button>
+            <button id='button-map2' class='buttons' title="Площадь лесовосстановления">2</button>
+            <button id='button-map3' class='buttons' title="Фонд лесовосстановления">3</button>
+            <button id='button-map4' class='buttons' title="Не покрытая лесом площадь">4</button>
+            <button id='button-map5' class='buttons' title="Рубки промежуточного пользования">5</button>
+            <button id='button-map6' class='buttons' title="Рубки главного пользования">6</button>
+            <button id='button-map7' class='buttons' title="Расчётная лесосека">7</button>
+            <button id='button-map8' class='buttons' title="Потери древесины вследствие лесных пожаров">8</button>
+            <button id='button-map9' class='buttons' title="Лесная площадь, пройденная пожарами">9</button>
+            <button id='button-map10' class='buttons' title="Возраст древостоя">10</button>
+            <button id='button-map11' class='buttons' title="Лесные районы">11</button>
+        </nav>
+
+    </header>
+
+    <!-- основная часть сайта -->
+    <div class='main-part'>
+
+        <!-- карта -->
+        <section class='container-map'>
+
+            <!-- название карты -->
+            <div id="name-map" class='name-map'>Классы бонитета</div>
+
+            <!-- Сама карта -->
+            <div id='map' class='map'>
+                <div class="legend">
+                    <p class="name-legend" id="name-legend">Доля лесов V и ниже классов<br>
+                        бонитета в покрытой лесом<br>
+                        (в процентах, по субъектам, 2003 г.)
+                    </p>
+                    <img id="legend" src="img/legend_1.png" alt="">
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Блок с информацией о карте -->
+        <section class='information'>
+
+            <div class='img'>
+                <img id='information-img' src="img/Бонитет4.jpg" alt="img">
+            </div>
+            <div class='text'>
+                <h4 id='information-header'>Классы бонитета</h4>
+                <p id='information-text'>Бонитет — показатель продуктивности леса. 
+                    Он в общей форме отражает скорость роста насаждения и может, следовательно, 
+                    служить также показателем соответствия условий местопроизрастания потребностям 
+                    данной древесной породы.
+                    Бонитет определяют по возрасту и высоте насаждения. 
+                    Высота насаждения — один из главных показателей его продуктивности, 
+                    она легко поддается измерению, поэтому используется для нахождения бонитета. 
+                    Бонитет определяют по таблицам, составленным в 1911 г. М. М. Орловым.  
+                    Чем выше класс бонитета у насаждения, тем при рассматриваемом возрасте 
+                    у насаждения больше высота и ценность. Насаждения II и выше класса 
+                    бонитета называют высокобонитетными, III-IV - среднебонитетными, 
+                    V - низкобонитетными, Vа и Vб - непродуктивными. 
+                    </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Кнопки для мобильной версии  -->
+    <nav class='tabbar'>
+
+        <!-- Список кнопок -->
+        <ul class="nav-buttons">
+
+            <!-- Кнопка влево -->
+            <li class="nav-button">
+                <button href="#" id='tabbar-button-left' class="nav-link">
+                    <img id='tabbar-button-left' src='img/arrow-left.png' alt="">
+                    <span class="nav-name">Назад</span>
+                </button>
+            </li>
+
+            <!-- Кнопка вправо -->
+            <li class="nav-button">
+                <button href="#" id='tabbar-button-right' class="nav-link">
+                    <img id='tabbar-button-right' src='img/arrow-left.png' alt="">
+                    <span class="nav-name">Вперед</span>
+                </button>
+            </li>
+        </ul>
+
+    </nav>
+
+    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
